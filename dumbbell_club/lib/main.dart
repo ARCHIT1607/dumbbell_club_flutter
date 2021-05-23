@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.poppins().fontFamily,
         primaryColor: Colors.white,
       ),
-      initialRoute: MyRoutes.registerRoute,
+      initialRoute: MyRoutes.loginRoute,
       routes: {
         '/': (context) => LoginPage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
