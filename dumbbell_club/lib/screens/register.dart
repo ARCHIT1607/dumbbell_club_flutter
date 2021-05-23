@@ -1,8 +1,5 @@
-import 'package:dumbbell_club/screens/login_page.dart';
-import 'package:dumbbell_club/utlis/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:dumbbell_club/main.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -46,69 +43,101 @@ class _RegisterPageState extends State<RegisterPage> {
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0),
               child: Column(
                 children: [
-                  InputFormField(
-                      text: 'Username',
-                      icon: Icons.account_circle,
-                      obscureText: false,
-                      hintText: "Enter Username"),
-                  InputFormField(
-                      text: 'Email',
-                      icon: Icons.email_rounded,
-                      obscureText: false,
-                      hintText: "Enter Email"),
-                  InputFormField(
-                      text: 'Password',
-                      icon: Icons.password_rounded,
-                      obscureText: true,
-                      hintText: "Enter Password"),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      icon: Icon(
+                        Icons.person,
+                        color: Color(0xffC4C4C4),
+                      ),
+                      hintText: 'Enter Username',
+                      labelText: 'Username',
+                      hintStyle: TextStyle(
+                        color: Color(0xffC4C4C4),
+                      ),
+                      labelStyle: TextStyle(color: Color(0xffC4C4C4)),
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey)),
+                    ),
+                    validator: (value) {
+                      return (value != null) ? 'Enter Username' : null;
+                    },
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      icon: Icon(
+                        Icons.email_rounded,
+                        color: Color(0xffC4C4C4),
+                      ),
+                      hintText: 'johnsnow@gmail.com',
+                      labelText: 'Email',
+                      hintStyle: TextStyle(
+                        color: Color(0xffC4C4C4),
+                      ),
+                      labelStyle: TextStyle(color: Color(0xffC4C4C4)),
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey)),
+                    ),
+                    validator: (value) {
+                      return (value != null) ? 'Enter Email' : null;
+                    },
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      icon: Icon(
+                        Icons.lock,
+                        color: Color(0xffC4C4C4),
+                      ),
+                      hintText: 'Enter Password',
+                      labelText: 'Password',
+                      hintStyle: TextStyle(
+                        color: Color(0xffC4C4C4),
+                      ),
+                      labelStyle: TextStyle(color: Color(0xffC4C4C4)),
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey)),
+                    ),
+                    validator: (value) {
+                      return (value != null) ? 'Enter Username' : null;
+                    },
+                    obscureText: true,
+                  ),
                   SizedBox(
                     height: 20.0,
                   ),
                   Material(
                     color: Color(0xffF1D333),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, MyRoutes.loginRoute);
-                      },
-                      child: Container(
-                        child: Text(
-                          "REGISTER",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: GoogleFonts.poppins().fontFamily,
-                          ),
+                    child: Container(
+                      child: Text(
+                        "REGISTER",
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: GoogleFonts.poppins().fontFamily,
                         ),
-                        alignment: Alignment.center,
-                        height: 50.0,
                       ),
+                      alignment: Alignment.center,
+                      height: 50.0,
                     ),
                   ),
                   SizedBox(
                     height: 40.0,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, MyRoutes.loginRoute);
-                    },
-                    child: RichText(
-                      text: TextSpan(
-                        text: "Already have an account?",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: GoogleFonts.poppins().fontFamily,
-                        ),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: ' Sign IN',
-                            style: TextStyle(
-                              color: Color(0xffF1D333),
-                              fontFamily: GoogleFonts.poppins().fontFamily,
-                            ),
-                          ),
-                        ],
+                  RichText(
+                    text: TextSpan(
+                      text: "Already have an account?",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: GoogleFonts.poppins().fontFamily,
                       ),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: ' Sign IN',
+                          style: TextStyle(
+                            color: Color(0xffF1D333),
+                            fontFamily: GoogleFonts.poppins().fontFamily,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

@@ -1,0 +1,85 @@
+import 'package:dumbbell_club/utlis/routes.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../constant.dart';
+import 'login_page.dart';
+
+class VerifyOtp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: SafeArea(
+        child: Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: [
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 100,
+                      ),
+                      Image.asset(
+                        'images/dumbbells.png',
+                        height: 80,
+                      ),
+                      Text(
+                        'VERIFY OTP',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 30),
+                      ),
+                      Text(
+                        'Enter the 6-digit OTP sent to archit778@gmail.com',
+                        style: TextStyle(
+                            color: Constants.secondaryHeaderColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                InputFormField(
+                  text: "Email",
+                  hintText: 'Enter your email',
+                  icon: Icons.email_rounded,
+                  controllerName: null,
+                  obscureText: false,
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.loginRoute);
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 50,
+                      width: 300,
+                      child: Text(
+                        'SEND OTP',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 18,
+                            fontFamily: GoogleFonts.poppins().fontFamily),
+                      ),
+                      color: Constants.primarySwatch,
+                    ),
+                  ),
+                ),
+              ],
+            )),
+      ),
+    );
+  }
+}
