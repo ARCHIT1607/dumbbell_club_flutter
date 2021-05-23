@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../constant.dart';
 
-class ResetPassowrd extends StatelessWidget {
+class NewPassowrd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
