@@ -1,4 +1,5 @@
 class MyRoutes {
+  static String splashScreenRoute = '/splashScreen';
   static String loginRoute = '/login';
   static String resetPasswordRoute = '/resetPassword';
   static String registerRoute = '/register';

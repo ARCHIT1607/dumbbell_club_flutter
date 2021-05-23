@@ -3,6 +3,7 @@ import 'package:dumbbell_club/screens/login_page.dart';
 import 'package:dumbbell_club/screens/new_password.dart';
 import 'package:dumbbell_club/screens/register.dart';
 import 'package:dumbbell_club/screens/reset_password.dart';
+import 'package:dumbbell_club/screens/splash_screen.dart';
 import 'package:dumbbell_club/screens/verify_otp.dart';
 import 'package:dumbbell_club/utlis/routes.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.verifyOtpRoute: (context) => VerifyOtp(),
         MyRoutes.newPasswordRoute: (context) => NewPassowrd(),
         MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.splashScreenRoute: (context) => SplashScreen()
 
       },
     );
