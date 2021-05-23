@@ -1,4 +1,5 @@
 import 'package:dumbbell_club/screens/login_page.dart';
+import 'package:dumbbell_club/screens/register.dart';
 import 'package:dumbbell_club/screens/reset_password.dart';
 import 'package:dumbbell_club/utlis/routes.dart';
 import 'package:flutter/material.dart';
@@ -28,11 +29,12 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.poppins().fontFamily,
         primaryColor: Colors.white,
       ),
-      initialRoute: MyRoutes.loginRoute,
+      initialRoute: MyRoutes.registerRoute,
       routes: {
         '/': (context) => LoginPage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
         MyRoutes.resetPasswordRoute: (context) => ResetPassowrd(),
+        MyRoutes.registerRoute: (context) => RegisterPage(),
       },
     );
   }
