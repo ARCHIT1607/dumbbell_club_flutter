@@ -18,9 +18,9 @@ class _RegisterPageState extends State<RegisterPage> {
             SizedBox(height: 20.0),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 120.0),
-              child: Image.network(
-                'https://image.flaticon.com/icons/png/512/2446/2446353.png',
-                fit: BoxFit.contain,
+              child: Image.asset(
+                'images/dumbbells.png',
+                height: 80,
               ),
             ),
             Text(
