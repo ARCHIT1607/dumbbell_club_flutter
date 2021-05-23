@@ -64,9 +64,14 @@ class LoginPage extends StatelessWidget {
                     margin: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.1,
                         vertical: 10),
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(color: Colors.amber),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.pushNamed(context, MyRoutes.resetPasswordRoute);
+                      },
+                      child: Text(
+                        'Forgot Password?',
+                        style: TextStyle(color: Colors.amber),
+                      ),
                     ),
                   ),
                 ],
@@ -75,7 +80,7 @@ class LoginPage extends StatelessWidget {
                 padding: const EdgeInsets.all(5.0),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.resetPasswordRoute);
+                    Navigator.pushNamed(context, MyRoutes.homeRoute);
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -129,16 +134,21 @@ class LoginPage extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              RichText(
-                text: TextSpan(
-                  text: "Don't have an account Yet?",
-                  style: TextStyle(color: Colors.white),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: 'Sign UP',
-                      style: TextStyle(color: Constants.primarySwatch),
-                    ),
-                  ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, MyRoutes.registerRoute);
+                },
+                child: RichText(
+                  text: TextSpan(
+                    text: "Don't have an account Yet?",
+                    style: TextStyle(color: Colors.white),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'Sign UP',
+                        style: TextStyle(color: Constants.primarySwatch),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
