@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../constant.dart';
 
-class ResetPassowrd extends StatelessWidget {
+class ResetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +50,7 @@ class ResetPassowrd extends StatelessWidget {
                 padding: const EdgeInsets.all(5.0),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.loginRoute);
+                    Navigator.pushNamed(context, MyRoutes.newPasswordRoute);
                   },
                   child: Container(
                     alignment: Alignment.center,
