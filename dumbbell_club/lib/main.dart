@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.poppins().fontFamily,
         primaryColor: Colors.white,
       ),
-      initialRoute: MyRoutes.verifyOtpRoute,
+      initialRoute: MyRoutes.splashScreenRoute,
       routes: {
         '/': (context) => RegisterPage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
@@ -43,7 +43,6 @@ class MyApp extends StatelessWidget {
         MyRoutes.newPasswordRoute: (context) => NewPassowrd(),
         MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.splashScreenRoute: (context) => SplashScreen()
-
       },
     );
   }

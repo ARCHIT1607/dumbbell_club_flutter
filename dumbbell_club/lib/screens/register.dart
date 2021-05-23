@@ -67,7 +67,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Color(0xffF1D333),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, MyRoutes.loginRoute);
+                        Navigator.pushNamed(context, MyRoutes.verifyOtpRoute);
                       },
                       child: Container(
                         child: Text(
