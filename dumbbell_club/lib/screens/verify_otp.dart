@@ -1,4 +1,5 @@
 import 'package:dumbbell_club/utlis/routes.dart';
+import 'package:dumbbell_club/widgets/onboarding_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,12 +16,9 @@ class VerifyOtp extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: 100,
+              height: 20.0,
             ),
-            Image.asset(
-              'images/dumbbells.png',
-              height: 80,
-            ),
+            OnboardingHeader(text: false, subtext: false),
             Text(
               'VERIFY OTP',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),

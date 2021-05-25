@@ -1,5 +1,6 @@
 import 'package:dumbbell_club/screens/login_page.dart';
 import 'package:dumbbell_club/utlis/routes.dart';
+import 'package:dumbbell_club/widgets/onboarding_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,7 +10,9 @@ class NewPassowrd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       body: SafeArea(
         child: Container(
             alignment: Alignment.center,
@@ -19,12 +22,9 @@ class NewPassowrd extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 100,
+                        height: 20.0,
                       ),
-                      Image.asset(
-                        'images/dumbbells.png',
-                        height: 80,
-                      ),
+                      OnboardingHeader(text: false, subtext: false),
                       Text(
                         'NEW PASSWORD',
                         style: TextStyle(
@@ -63,7 +63,7 @@ class NewPassowrd extends StatelessWidget {
                       alignment: Alignment.center,
                       height: 50,
                       width: 300,
-                      child: Text('RESET',
+                      child: Text('SUBMIT',
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w900,

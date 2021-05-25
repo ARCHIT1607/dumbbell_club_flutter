@@ -1,4 +1,5 @@
 import 'package:dumbbell_club/utlis/routes.dart';
+import 'package:dumbbell_club/widgets/onboarding_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,31 +13,8 @@ class LoginPage extends StatelessWidget {
         child: Container(
           child: Column(
             children: [
-              Container(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 100,
-                    ),
-                    Image.asset(
-                      'images/dumbbells.png',
-                      height: 80,
-                    ),
-                    Text(
-                      'DUMBBELL CLUB',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                    ),
-                    Text(
-                      'The Ultimate Fitness Cult',
-                      style: TextStyle(
-                          color: Constants.secondaryHeaderColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15),
-                    ),
-                  ],
-                ),
-              ),
+            SizedBox(height: 20.0),
+            OnboardingHeader(text: true, subtext: true),
               SizedBox(
                 height: 10,
               ),

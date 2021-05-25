@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
       body: AnimatedSplashScreen(
         splash: Container(
           child: Image.asset(
-            'images/dumbbells.png',
+            'images/logo.png',
           ),
         ),
         nextScreen: LoginPage(),

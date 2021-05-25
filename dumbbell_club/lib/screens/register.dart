@@ -1,5 +1,6 @@
 import 'package:dumbbell_club/screens/login_page.dart';
 import 'package:dumbbell_club/utlis/routes.dart';
+import 'package:dumbbell_club/widgets/onboarding_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,31 +17,7 @@ class _RegisterPageState extends State<RegisterPage> {
         child: Column(
           children: [
             SizedBox(height: 20.0),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 120.0),
-              child: Image.asset(
-                'images/dumbbells.png',
-                height: 80,
-              ),
-            ),
-            Text(
-              "DUMBBELL CLUB",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: GoogleFonts.poppins().fontFamily,
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w900),
-            ),
-            SizedBox(
-              height: 5.0,
-            ),
-            Text(
-              "The Ultimate Fitness Cult",
-              style: TextStyle(
-                  fontFamily: GoogleFonts.poppins().fontFamily,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.grey.shade400),
-            ),
+            OnboardingHeader(text: true, subtext: true),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0),
               child: Column(
