@@ -51,7 +51,6 @@ class MyApp extends StatelessWidget {
         MyRoutes.workoutRoute: (context) => WorkoutScreen(),
         MyRoutes.nutritionPageRoute: (context) => NutritionScreen(),
         MyRoutes.profileRoute: (context) => ProfileScreen(),
-
       },
     );
   }

@@ -17,7 +17,7 @@ class ResetPassword extends StatefulWidget {
 class _ResetPasswordState extends State<ResetPassword> {
   final textFieldValueHolder = TextEditingController();
 
-  Future<http.Response> postRequest() async {
+  postRequest() async {
     var url = 'https://dumbbell-club-api.herokuapp.com/api/sendMail';
     String body = '';
     setState(() {
@@ -82,12 +82,8 @@ class _ResetPasswordState extends State<ResetPassword> {
                   padding: const EdgeInsets.all(5.0),
                   child: GestureDetector(
                     onTap: () {
-                      Response response = postRequest() as http.Response;
-                      // if (response.statusCode == 200)
-                        Navigator.pushNamed(context, MyRoutes.newPasswordRoute);
-                      // else {
-                      //   print('failed');
-                      // }
+                      postRequest();
+                      Navigator.pushNamed(context, MyRoutes.newPasswordRoute);
                     },
                     child: Container(
                       alignment: Alignment.center,
