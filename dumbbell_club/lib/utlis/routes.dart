@@ -5,5 +5,9 @@ class MyRoutes {
   static String registerRoute = '/register';
   static String verifyOtpRoute = '/verifyOtp';
   static String homeRoute = '/home';
-  static String newPasswordRoute = 'newPassword';
+  static String newPasswordRoute = '/newPassword';
+  static String profileRoute = '/profile';
+  static String nutritionPageRoute = '/nutrition';
+  static String workoutRoute = '/workout';
+  static String dashboardRoute = '/dashboard';
 }

@@ -1,10 +1,14 @@
+import 'package:dumbbell_club/screens/dashboard.dart';
 import 'package:dumbbell_club/screens/home.dart';
 import 'package:dumbbell_club/screens/login_page.dart';
 import 'package:dumbbell_club/screens/new_password.dart';
+import 'package:dumbbell_club/screens/nutrition_screen.dart';
+import 'package:dumbbell_club/screens/profile.dart';
 import 'package:dumbbell_club/screens/register.dart';
 import 'package:dumbbell_club/screens/reset_password.dart';
 import 'package:dumbbell_club/screens/splash_screen.dart';
 import 'package:dumbbell_club/screens/verify_otp.dart';
+import 'package:dumbbell_club/screens/workout_screen.dart';
 import 'package:dumbbell_club/utlis/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,7 +37,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.poppins().fontFamily,
         primaryColor: Colors.white,
       ),
-      initialRoute: MyRoutes.splashScreenRoute,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         '/': (context) => RegisterPage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
@@ -42,7 +46,12 @@ class MyApp extends StatelessWidget {
         MyRoutes.verifyOtpRoute: (context) => VerifyOtp(),
         MyRoutes.newPasswordRoute: (context) => NewPassowrd(),
         MyRoutes.homeRoute: (context) => HomePage(),
-        MyRoutes.splashScreenRoute: (context) => SplashScreen()
+        MyRoutes.splashScreenRoute: (context) => SplashScreen(),
+        MyRoutes.dashboardRoute: (context) => DashboardScreen(),
+        MyRoutes.workoutRoute: (context) => WorkoutScreen(),
+        MyRoutes.nutritionPageRoute: (context) => NutritionScreen(),
+        MyRoutes.profileRoute: (context) => ProfileScreen(),
+
       },
     );
   }
