@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff232F3E),
       body: SingleChildScrollView(child: PageStorage(
         child: currentScreen,
         bucket: bucket),
@@ -42,6 +43,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 2.0,
       ),
       bottomNavigationBar: BottomAppBar(
+        color: Colors.black,
     shape: CircularNotchedRectangle(),
     notchMargin: 15,
     child: Container(
@@ -164,7 +166,8 @@ class _HomePageState extends State<HomePage> {
                 width: 10.0,
               )
             ],
-          )
+          ),
+          
         ],
       ),
     ),
