@@ -1,9 +1,9 @@
+import 'package:dumbbell_club/profile/profile_home.dart';
 import 'package:dumbbell_club/screens/dashboard.dart';
 import 'package:dumbbell_club/screens/home.dart';
 import 'package:dumbbell_club/screens/login_page.dart';
 import 'package:dumbbell_club/screens/new_password.dart';
 import 'package:dumbbell_club/screens/nutrition_screen.dart';
-import 'package:dumbbell_club/screens/profile.dart';
 import 'package:dumbbell_club/screens/register.dart';
 import 'package:dumbbell_club/screens/reset_password.dart';
 import 'package:dumbbell_club/screens/splash_screen.dart';
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.dashboardRoute: (context) => DashboardScreen(),
         MyRoutes.workoutRoute: (context) => WorkoutScreen(),
         MyRoutes.nutritionPageRoute: (context) => NutritionScreen(),
-        MyRoutes.profileRoute: (context) => ProfileScreen(),
+        MyRoutes.profileRoute: (context) => ProfileHomeScreen(),
       },
     );
   }
