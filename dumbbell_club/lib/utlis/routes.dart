@@ -10,4 +10,5 @@ class MyRoutes {
   static String nutritionPageRoute = '/nutrition';
   static String workoutRoute = '/workout';
   static String dashboardRoute = '/dashboard';
+  static String statsRoute = '/profile-stats';
 }
