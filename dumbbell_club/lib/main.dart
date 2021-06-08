@@ -1,3 +1,4 @@
+import 'package:dumbbell_club/profile/custom_workout_home.dart';
 import 'package:dumbbell_club/profile/profile_home.dart';
 import 'package:dumbbell_club/screens/dashboard.dart';
 import 'package:dumbbell_club/screens/home.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.poppins().fontFamily,
         primaryColor: Colors.white,
       ),
-      initialRoute: MyRoutes.registerRoute,
+      initialRoute: MyRoutes.customWorkoutHome,
       routes: {
         '/': (context) => RegisterPage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.workoutRoute: (context) => WorkoutScreen(),
         MyRoutes.nutritionPageRoute: (context) => NutritionScreen(),
         MyRoutes.profileRoute: (context) => ProfileHomeScreen(),
+        MyRoutes.customWorkoutHome : (context) => CustomWorkoutHome(),
       },
     );
   }
