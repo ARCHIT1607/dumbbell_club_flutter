@@ -1,6 +1,6 @@
+import 'package:dumbbell_club/utlis/routes.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class CustomWorkoutHome extends StatefulWidget {
   const CustomWorkoutHome({Key? key}) : super(key: key);
@@ -14,6 +14,7 @@ class _CustomWorkoutHomeState extends State<CustomWorkoutHome> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Container(
         color: Colors.black,
@@ -35,110 +36,9 @@ class _CustomWorkoutHomeState extends State<CustomWorkoutHome> {
               ),
               GestureDetector(
                 onTap: () {
-                  showModalBottomSheet(
-                      enableDrag: true,
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Center(
-                                child: Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Text(
-                                "About",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25.0,
-                                ),
-                              ),
-                            )),
-                            Container(
-                              height: 1,
-                              color: Colors.white,
-                              width: width,
-                            ),
-                            SizedBox(height: 20.0),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ExpandablePanel(
-                                header: Text(
-                                  "Birthday",
-                                  style: TextStyle(
-                                      color: Colors.amber, fontSize: 20.0),
-                                ),
-                                collapsed: SizedBox(
-                                  height: 10.0,
-                                ),
-                                expanded: Container(
-                                    height: height * 0.15,
-                                    width: width,
-                                    color: Colors.amber,
-                                    child:
-                                        Center(child: Text("Enter Birthdate"))),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ExpandablePanel(
-                                header: Text(
-                                  "Height",
-                                  style: TextStyle(
-                                      color: Colors.amber, fontSize: 20.0),
-                                ),
-                                collapsed: SizedBox(
-                                  height: 10.0,
-                                ),
-                                expanded: Container(
-                                    height: height * 0.15,
-                                    width: width,
-                                    color: Colors.amber,
-                                    child: Center(child: Text("Enter Height"))),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ExpandablePanel(
-                                header: Text(
-                                  "Weight",
-                                  style: TextStyle(
-                                      color: Colors.amber, fontSize: 20.0),
-                                ),
-                                collapsed: SizedBox(
-                                  height: 10.0,
-                                ),
-                                expanded: Container(
-                                    height: height * 0.15,
-                                    width: width,
-                                    color: Colors.amber,
-                                    child: Center(child: Text("Enter Weight"))),
-                              ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(10.0),
-                              width: width * 0.8,
-                              height: 50.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xffEA6003),
-                                borderRadius: BorderRadius.circular(20.0),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "Next",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20.0,
-                            )
-                          ],
-                        );
-                      });
+                  setState(() {
+                    Navigator.pushNamed(context, MyRoutes.aboutYou);
+                  });
                 },
                 child: Container(
                   padding: EdgeInsets.all(10.0),
@@ -158,12 +58,29 @@ class _CustomWorkoutHomeState extends State<CustomWorkoutHome> {
                     ),
                   ),
                 ),
-                
-              )
+              ),
+              
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class SubHeaderDescription extends StatelessWidget {
+  const SubHeaderDescription({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  @override
+  final text;
+  Widget build(BuildContext context) {
+    return Text(
+      this.text,
+      style: TextStyle(
+          fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w300),
     );
   }
 }
@@ -202,5 +119,76 @@ class HeaderWidget extends StatelessWidget {
             )
           ],
         ));
+  }
+}
+
+class SelectButton extends StatefulWidget {
+  const SelectButton({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  final text;
+
+  @override
+  State<SelectButton> createState() => _SelectButtonState();
+}
+
+class _SelectButtonState extends State<SelectButton> {
+  bool buttonColor = false;
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          buttonColor = true;
+        });
+      },
+      child: Container(
+        alignment: Alignment.centerLeft,
+        width: width * 0.25,
+        height: 40,
+        decoration: BoxDecoration(
+            color: buttonColor ? Colors.orange : Colors.black87,
+            borderRadius: BorderRadius.circular(20.0)),
+        child: Center(child: Text(this.widget.text)),
+      ),
+    );
+  }
+}
+
+class GoalButtons extends StatefulWidget {
+  const GoalButtons({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  final text;
+  @override
+  _GoalButtonsState createState() => _GoalButtonsState();
+}
+
+class _GoalButtonsState extends State<GoalButtons> {
+  bool buttonColor = false;
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          buttonColor = true;
+        });
+      },
+      child: Container(
+        alignment: Alignment.centerLeft,
+        width: width * 0.35,
+        height: 40,
+        decoration: BoxDecoration(
+            color: buttonColor ? Colors.orange : Colors.black87,
+            borderRadius: BorderRadius.circular(20.0)),
+        child: Center(child: Text(this.widget.text)),
+      ),
+    );
   }
 }

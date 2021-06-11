@@ -1,4 +1,7 @@
 import 'package:dumbbell_club/profile/custom_workout_home.dart';
+import 'package:dumbbell_club/profile/custom_workut/about_you.dart';
+import 'package:dumbbell_club/profile/custom_workut/duration.dart';
+import 'package:dumbbell_club/profile/custom_workut/goals.dart';
 import 'package:dumbbell_club/profile/profile_home.dart';
 import 'package:dumbbell_club/screens/dashboard.dart';
 import 'package:dumbbell_club/screens/home.dart';
@@ -53,6 +56,9 @@ class MyApp extends StatelessWidget {
         MyRoutes.nutritionPageRoute: (context) => NutritionScreen(),
         MyRoutes.profileRoute: (context) => ProfileHomeScreen(),
         MyRoutes.customWorkoutHome : (context) => CustomWorkoutHome(),
+        MyRoutes.aboutYou : (context) => AboutYou(),
+        MyRoutes.duration : (context) => DurationPage(),
+        MyRoutes.goals : (context) => GoalsPage()
       },
     );
   }

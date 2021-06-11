@@ -11,4 +11,7 @@ class MyRoutes {
   static String workoutRoute = '/workout';
   static String dashboardRoute = '/dashboard';
   static String customWorkoutHome = '/customWorkoutHome';
+  static String aboutYou = '/aboutYou';
+  static String duration = '/duration';
+  static String goals = '/goals';
 }
