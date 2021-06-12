@@ -8,6 +8,78 @@ class FeedBack extends StatefulWidget {
 }
 
 class _FeedBackState extends State<FeedBack> {
+  int? selectedRadio1;
+  int? selectedRadio2;
+  int? selectedRadio3;
+  int? selectedRadio4;
+  var values = [];
+  int star = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedRadio1 = 0;
+    selectedRadio2 = 0;
+    selectedRadio3 = 0;
+    selectedRadio4 = 0;
+  }
+
+  setSelectedRadio1(String val) {
+    setState(() {
+      selectedRadio1 = int.parse(val);
+      if (val == '1' && values.contains('2')) {
+        print(values.contains('2'));
+        values.remove('2');
+      } else if (val == '2' && values.contains('1')) {
+        print(values.contains('1'));
+        values.remove('1');
+      }
+      values.add(val);
+    });
+  }
+
+  setSelectedRadio2(String val) {
+    setState(() {
+      selectedRadio2 = int.parse(val);
+      if (val == '3' && values.contains('4')) {
+        print(values.contains('4'));
+        values.remove('4');
+      } else if (val == '4' && values.contains('3')) {
+        print(values.contains('3'));
+        values.remove('3');
+      }
+      values.add(val);
+    });
+  }
+
+  setSelectedRadio3(String val) {
+    setState(() {
+      selectedRadio3 = int.parse(val);
+      if (val == '5' && values.contains('6')) {
+        print(values.contains('6'));
+        values.remove('6');
+      } else if (val == '6' && values.contains('5')) {
+        print(values.contains('5'));
+        values.remove('5');
+      }
+      values.add(val);
+    });
+  }
+
+  setSelectedRadio4(String val) {
+    setState(() {
+      selectedRadio4 = int.parse(val);
+      if (val == '7' && values.contains('8')) {
+        print(values.contains('6'));
+        values.remove('8');
+      } else if (val == '8' && values.contains('7')) {
+        print(values.contains('7'));
+        values.remove('7');
+      }
+      values.add(val);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,16 +99,278 @@ class _FeedBackState extends State<FeedBack> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Text(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.only(left: 20.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
                   ' • Is the website user friendly?',
                   style: TextStyle(fontSize: 18),
                 ),
-              ],
-            ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Radio(
+                                value: 1,
+                                groupValue: selectedRadio1,
+                                onChanged: (val) {
+                                  print('You pressed this $val');
+                                  setSelectedRadio1(val.toString());
+                                },
+                              ),
+                              Text('Yes'),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                value: 2,
+                                groupValue: selectedRadio1,
+                                onChanged: (val) {
+                                  print('You pressed this $val');
+                                  setSelectedRadio1(val.toString());
+                                },
+                              ),
+                              Text('No'),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Text(
+                      ' • Are our provided(given) workouts targetting the desrided muscle area?',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Radio(
+                                value: 3,
+                                groupValue: selectedRadio2,
+                                onChanged: (val) {
+                                  print('You pressed this $val');
+                                  setSelectedRadio2(val.toString());
+                                },
+                              ),
+                              Text('Yes'),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                value: 4,
+                                groupValue: selectedRadio2,
+                                onChanged: (val) {
+                                  print('You pressed this $val');
+                                  setSelectedRadio2(val.toString());
+                                },
+                              ),
+                              Text('No'),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Text(
+                      ' • Did you like our customised workouts?',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Radio(
+                                value: 5,
+                                groupValue: selectedRadio3,
+                                onChanged: (val) {
+                                  print('You pressed this $val');
+                                  setSelectedRadio3(val.toString());
+                                },
+                              ),
+                              Text('Yes'),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                value: 6,
+                                groupValue: selectedRadio3,
+                                onChanged: (val) {
+                                  print('You pressed this $val');
+                                  setSelectedRadio3(val.toString());
+                                },
+                              ),
+                              Text('No'),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Text(
+                      ' • Did you like the nutrition plan we customised for you?',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Radio(
+                                value: 7,
+                                groupValue: selectedRadio4,
+                                onChanged: (val) {
+                                  print('You pressed this $val');
+                                  setSelectedRadio4(val.toString());
+                                },
+                              ),
+                              Text('Yes'),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                value: 8,
+                                groupValue: selectedRadio4,
+                                onChanged: (val) {
+                                  print('You pressed this $val');
+                                  setSelectedRadio4(val.toString());
+                                },
+                              ),
+                              Text('No'),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Text(
+                      ' • Please mention any difficulties you’ve come across while using our app.',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: TextField(
+                        keyboardType: TextInputType.multiline,
+                        maxLines:
+                            3, // when user presses enter it will adapt to it
+                      ),
+                    ),
+                    Text(
+                      ' • Any additional changes that you’d like to incorporate?',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: TextField(
+                        keyboardType: TextInputType.multiline,
+                        maxLines:
+                            3, // when user presses enter it will adapt to it
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        ' • Please rate our app :)',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Row(
+                        children: [
+                          IconButton(
+                              onPressed: () {
+                                print("You pressed 1");
+                                star = 1;
+                              },
+                              icon: Icon(
+                                Icons.star,
+                                size: 20,
+                                color: Colors.yellow,
+                              )),
+                          IconButton(
+                              onPressed: () {
+                                print("You pressed 2");
+                                star = 2;
+                              },
+                              icon: Icon(
+                                Icons.star,
+                                size: 20,
+                                color: Colors.yellow,
+                              )),
+                          IconButton(
+                              onPressed: () {
+                                print("You pressed 3");
+                                star = 3;
+                              },
+                              icon: Icon(
+                                Icons.star,
+                                size: 20,
+                                color: Colors.yellow,
+                              )),
+                          IconButton(
+                              onPressed: () {
+                                print("You pressed 4");
+                                star = 4;
+                              },
+                              icon: Icon(
+                                Icons.star,
+                                size: 20,
+                                color: Colors.yellow,
+                              )),
+                          IconButton(
+                              onPressed: () {
+                                print("You pressed 5");
+                                star = 5;
+                              },
+                              icon: Icon(
+                                Icons.star,
+                                size: 20,
+                                color: Colors.yellow,
+                              )),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          print("Added values $values and star rating $star");
+                        },
+                        child: Text("Finish"),
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xFFEA6003),
+                          shape: new RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(30.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),
