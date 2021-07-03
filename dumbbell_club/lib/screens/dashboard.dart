@@ -1,4 +1,3 @@
-import 'package:dumbbell_club/widgets/bar_chart_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 

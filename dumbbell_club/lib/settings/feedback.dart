@@ -80,6 +80,9 @@ class _FeedBackState extends State<FeedBack> {
     });
   }
 
+  RangeValues currentRangeValuesQuestion1 = const RangeValues(0, 5);
+  RangeValues currentRangeValuesQuestion2 = const RangeValues(0, 5);
+  RangeValues currentRangeValuesQuestion3 = const RangeValues(0, 5);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,268 +109,207 @@ class _FeedBackState extends State<FeedBack> {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   ' • Is the website user friendly?',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 300,
+                    child: RangeSlider(
+                      values: currentRangeValuesQuestion1,
+                      min: 0,
+                      max: 5,
+                      divisions: 5,
+                      labels: RangeLabels(
+                        currentRangeValuesQuestion1.start.round().toString(),
+                        currentRangeValuesQuestion1.end.round().toString(),
+                      ),
+                      onChanged: (RangeValues values) {
+                        setState(() {
+                          currentRangeValuesQuestion1 = values;
+                        });
+                      },
+                    ),
+                  ),
+                  Text(currentRangeValuesQuestion1.end.round().toString()),
+                ],
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 20.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  ' • Did you like our customised workouts?',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 300,
+                    child: RangeSlider(
+                      values: currentRangeValuesQuestion2,
+                      min: 0,
+                      max: 5,
+                      divisions: 5,
+                      labels: RangeLabels(
+                        currentRangeValuesQuestion2.start.round().toString(),
+                        currentRangeValuesQuestion2.end.round().toString(),
+                      ),
+                      onChanged: (RangeValues values) {
+                        setState(() {
+                          currentRangeValuesQuestion2 = values;
+                        });
+                      },
+                    ),
+                  ),
+                  Text(currentRangeValuesQuestion2.end.round().toString()),
+                ],
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 20.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  ' • Did you like the nutition plan we customised for you?',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 300,
+                    child: RangeSlider(
+                      values: currentRangeValuesQuestion3,
+                      min: 0,
+                      max: 5,
+                      divisions: 5,
+                      labels: RangeLabels(
+                        currentRangeValuesQuestion3.start.round().toString(),
+                        currentRangeValuesQuestion3.end.round().toString(),
+                      ),
+                      onChanged: (RangeValues values) {
+                        setState(() {
+                          currentRangeValuesQuestion3 = values;
+                        });
+                      },
+                    ),
+                  ),
+                  Text(currentRangeValuesQuestion3.end.round().toString()),
+                ],
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 20.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  ' • Please mention any difficulties you \'ve come across while using app ',
+                  style: TextStyle(fontSize: 16),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Radio(
-                                value: 1,
-                                groupValue: selectedRadio1,
-                                onChanged: (val) {
-                                  print('You pressed this $val');
-                                  setSelectedRadio1(val.toString());
-                                },
-                              ),
-                              Text('Yes'),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                value: 2,
-                                groupValue: selectedRadio1,
-                                onChanged: (val) {
-                                  print('You pressed this $val');
-                                  setSelectedRadio1(val.toString());
-                                },
-                              ),
-                              Text('No'),
-                            ],
-                          ),
-                        ],
-                      ),
+                padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      fillColor: Colors.grey, focusColor: Colors.grey),
+                  maxLines: 2,
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 20.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  ' • Any additional changes that you’d like to incorporate?',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      fillColor: Colors.grey, focusColor: Colors.grey),
+                  maxLines: 2,
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: Text(
+                  'Please rate our app :)',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        print("You pressed 1");
+                        star = 1;
+                      },
+                      icon: Icon(
+                        Icons.star,
+                        size: 20,
+                        color: Colors.yellow,
+                      )),
+                  IconButton(
+                      onPressed: () {
+                        print("You pressed 2");
+                        star = 2;
+                      },
+                      icon: Icon(
+                        Icons.star,
+                        size: 20,
+                        color: Colors.yellow,
+                      )),
+                  IconButton(
+                      onPressed: () {
+                        print("You pressed 3");
+                        star = 3;
+                      },
+                      icon: Icon(
+                        Icons.star,
+                        size: 20,
+                        color: Colors.yellow,
+                      )),
+                  IconButton(
+                      onPressed: () {
+                        print("You pressed 4");
+                        star = 4;
+                      },
+                      icon: Icon(
+                        Icons.star,
+                        size: 20,
+                        color: Colors.yellow,
+                      )),
+                  IconButton(
+                      onPressed: () {
+                        print("You pressed 5");
+                        star = 5;
+                      },
+                      icon: Icon(
+                        Icons.star,
+                        size: 20,
+                        color: Colors.yellow,
+                      )),
+                ],
+              ),
+              Container(
+                alignment: Alignment.center ,
+                child: ElevatedButton(
+                  onPressed: () {
+                    print("Added values $values and star rating $star");
+                  },
+                  child: Text("Finish"),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFEA6003),
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0),
                     ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    Text(
-                      ' • Are our provided(given) workouts targetting the desrided muscle area?',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Radio(
-                                value: 3,
-                                groupValue: selectedRadio2,
-                                onChanged: (val) {
-                                  print('You pressed this $val');
-                                  setSelectedRadio2(val.toString());
-                                },
-                              ),
-                              Text('Yes'),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                value: 4,
-                                groupValue: selectedRadio2,
-                                onChanged: (val) {
-                                  print('You pressed this $val');
-                                  setSelectedRadio2(val.toString());
-                                },
-                              ),
-                              Text('No'),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Text(
-                      ' • Did you like our customised workouts?',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Radio(
-                                value: 5,
-                                groupValue: selectedRadio3,
-                                onChanged: (val) {
-                                  print('You pressed this $val');
-                                  setSelectedRadio3(val.toString());
-                                },
-                              ),
-                              Text('Yes'),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                value: 6,
-                                groupValue: selectedRadio3,
-                                onChanged: (val) {
-                                  print('You pressed this $val');
-                                  setSelectedRadio3(val.toString());
-                                },
-                              ),
-                              Text('No'),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Text(
-                      ' • Did you like the nutrition plan we customised for you?',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Radio(
-                                value: 7,
-                                groupValue: selectedRadio4,
-                                onChanged: (val) {
-                                  print('You pressed this $val');
-                                  setSelectedRadio4(val.toString());
-                                },
-                              ),
-                              Text('Yes'),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                value: 8,
-                                groupValue: selectedRadio4,
-                                onChanged: (val) {
-                                  print('You pressed this $val');
-                                  setSelectedRadio4(val.toString());
-                                },
-                              ),
-                              Text('No'),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Text(
-                      ' • Please mention any difficulties you’ve come across while using our app.',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: TextField(
-                        keyboardType: TextInputType.multiline,
-                        maxLines:
-                            3, // when user presses enter it will adapt to it
-                      ),
-                    ),
-                    Text(
-                      ' • Any additional changes that you’d like to incorporate?',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: TextField(
-                        keyboardType: TextInputType.multiline,
-                        maxLines:
-                            3, // when user presses enter it will adapt to it
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        ' • Please rate our app :)',
-                        style: TextStyle(fontSize: 18),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: Row(
-                        children: [
-                          IconButton(
-                              onPressed: () {
-                                print("You pressed 1");
-                                star = 1;
-                              },
-                              icon: Icon(
-                                Icons.star,
-                                size: 20,
-                                color: Colors.yellow,
-                              )),
-                          IconButton(
-                              onPressed: () {
-                                print("You pressed 2");
-                                star = 2;
-                              },
-                              icon: Icon(
-                                Icons.star,
-                                size: 20,
-                                color: Colors.yellow,
-                              )),
-                          IconButton(
-                              onPressed: () {
-                                print("You pressed 3");
-                                star = 3;
-                              },
-                              icon: Icon(
-                                Icons.star,
-                                size: 20,
-                                color: Colors.yellow,
-                              )),
-                          IconButton(
-                              onPressed: () {
-                                print("You pressed 4");
-                                star = 4;
-                              },
-                              icon: Icon(
-                                Icons.star,
-                                size: 20,
-                                color: Colors.yellow,
-                              )),
-                          IconButton(
-                              onPressed: () {
-                                print("You pressed 5");
-                                star = 5;
-                              },
-                              icon: Icon(
-                                Icons.star,
-                                size: 20,
-                                color: Colors.yellow,
-                              )),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.centerRight,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          print("Added values $values and star rating $star");
-                        },
-                        child: Text("Finish"),
-                        style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFEA6003),
-                          shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(30.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ],

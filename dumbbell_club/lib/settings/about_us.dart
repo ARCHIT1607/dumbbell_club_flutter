@@ -24,21 +24,32 @@ class AboutUs extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              Center(
+                child: Container(
+                  height: 100,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/team.png'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+              Center(
+                child: Text(
+                  'Our Story',
+                  style: TextStyle(fontWeight: FontWeight.w900),
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
               Container(
                 padding: EdgeInsets.all(28.0),
                 width: 450,
                 child: Text(
                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it",
                 ),
-              ),
-              Center(
-                child: Text(
-                  'The Team',
-                  style: TextStyle(fontWeight: FontWeight.w900),
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
