@@ -152,8 +152,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               children: [
                 CircleAvatar(
-                  child: Image.asset('icons/avatar.png'),
                   radius: 50.0,
+                  child: ClipOval(child: Image.asset('images/avatar.png')),
                 ),
                 SizedBox(height: 5),
                 Text(
@@ -230,7 +230,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   profileTileText: 'Measurements',
                 ),
                 ProfileTile(
-                  profileRouting: MyRoutes.loginRoute,
+                  profileRouting: MyRoutes.statsRoute,
                   profileTileText: 'Stats',
                 ),
                 ProfileTile(

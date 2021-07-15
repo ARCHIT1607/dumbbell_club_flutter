@@ -14,4 +14,13 @@ class MyRoutes {
   static String aboutYou = '/aboutYou';
   static String duration = '/duration';
   static String goals = '/goals';
+  static String statsRoute = '/profile-stats';
+
+  // Settings Screen
+  static String settingsRoute = '/settings';
+  static String abouUsRoute = '/about-us';
+  static String coffeRoute = '/buyCoffee';
+  static String myAccountRoute = '/my-account';
+  static String feedbackRoute = '/feedback';
+  static String contactRoute = '/contact-us';
 }

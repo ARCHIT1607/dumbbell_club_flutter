@@ -3,6 +3,7 @@ import 'package:dumbbell_club/profile/custom_workut/about_you.dart';
 import 'package:dumbbell_club/profile/custom_workut/duration.dart';
 import 'package:dumbbell_club/profile/custom_workut/goals.dart';
 import 'package:dumbbell_club/profile/profile_home.dart';
+import 'package:dumbbell_club/profile/stats.dart';
 import 'package:dumbbell_club/screens/dashboard.dart';
 import 'package:dumbbell_club/screens/home.dart';
 import 'package:dumbbell_club/screens/login_page.dart';
@@ -10,9 +11,15 @@ import 'package:dumbbell_club/screens/new_password.dart';
 import 'package:dumbbell_club/screens/nutrition_screen.dart';
 import 'package:dumbbell_club/screens/register.dart';
 import 'package:dumbbell_club/screens/reset_password.dart';
+import 'package:dumbbell_club/settings/buy_me_coffee.dart';
+import 'package:dumbbell_club/settings/contact_us.dart';
+import 'package:dumbbell_club/settings/feedback.dart';
+import 'package:dumbbell_club/settings/my_account.dart';
+import 'package:dumbbell_club/settings/settings_main.dart';
 import 'package:dumbbell_club/screens/splash_screen.dart';
 import 'package:dumbbell_club/screens/verify_otp.dart';
 import 'package:dumbbell_club/screens/workout_screen.dart';
+import 'package:dumbbell_club/settings/about_us.dart';
 import 'package:dumbbell_club/utlis/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -58,7 +65,14 @@ class MyApp extends StatelessWidget {
         MyRoutes.customWorkoutHome : (context) => CustomWorkoutHome(),
         MyRoutes.aboutYou : (context) => AboutYou(),
         MyRoutes.duration : (context) => DurationPage(),
-        MyRoutes.goals : (context) => GoalsPage()
+        MyRoutes.goals : (context) => GoalsPage(),
+        MyRoutes.statsRoute: (context) => StatsScreen(),
+        MyRoutes.settingsRoute: (context) => SettingHome(),
+        MyRoutes.abouUsRoute: (context) => AboutUs(),
+        MyRoutes.coffeRoute: (context) => Coffee(),
+        MyRoutes.myAccountRoute: (context) => MyAccount(),
+        MyRoutes.feedbackRoute: (context) => FeedBack(),
+        MyRoutes.contactRoute: (context) => ContactUs(),
       },
     );
   }
