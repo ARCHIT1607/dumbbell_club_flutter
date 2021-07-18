@@ -43,6 +43,7 @@ dependencies:
   percent_indicator: ^3.0.1
   bottom_navy_bar: ^6.0.0
   flutter_switch: ^0.3.2
+  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
