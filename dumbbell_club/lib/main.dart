@@ -20,6 +20,7 @@ import 'package:dumbbell_club/settings/about_us.dart';
 import 'package:dumbbell_club/utlis/CustomTheme.dart';
 import 'package:dumbbell_club/utlis/routes.dart';
 import 'package:dumbbell_club/utlis/theme.dart';
+import 'package:dumbbell_club/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -40,20 +41,15 @@ bool light = true;
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ThemeChanger>(
-      create: (_) => ThemeChanger(CustomTheme.lightTheme),
-      child: MaterialAppWithTheme(),
-    );
+    return MaterialAppWithTheme();
   }
 }
 
 class MaterialAppWithTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = Provider.of<ThemeChanger>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: theme.getTheme(),
       initialRoute: MyRoutes.indexRoute,
       routes: {
         '/': (context) => RegisterPage(),
