@@ -23,6 +23,7 @@ import 'package:dumbbell_club/settings/about_us.dart';
 import 'package:dumbbell_club/utlis/CustomTheme.dart';
 import 'package:dumbbell_club/utlis/routes.dart';
 import 'package:dumbbell_club/utlis/theme.dart';
+import 'package:dumbbell_club/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -43,31 +44,15 @@ bool light = true;
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ThemeChanger>(
-      create: (_) => ThemeChanger(CustomTheme.lightTheme),
-      child: MaterialAppWithTheme(),
-    );
+    return MaterialAppWithTheme();
   }
 }
 
 class MaterialAppWithTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = Provider.of<ThemeChanger>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.dark,
-      theme: ThemeData(
-        brightness: Brightness.light,
-        canvasColor: Colors.white,
-        fontFamily: GoogleFonts.poppins().fontFamily,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        canvasColor: Color(0xff202020),
-        fontFamily: GoogleFonts.poppins().fontFamily,
-        primaryColor: Colors.white,
-      ),
       initialRoute: MyRoutes.loginRoute,
       routes: {
         '/': (context) => RegisterPage(),
@@ -81,10 +66,10 @@ class MaterialAppWithTheme extends StatelessWidget {
         MyRoutes.workoutRoute: (context) => WorkoutScreen(),
         MyRoutes.nutritionPageRoute: (context) => NutritionScreen(),
         MyRoutes.profileRoute: (context) => ProfileHomeScreen(),
-        MyRoutes.customWorkoutHome : (context) => CustomWorkoutHome(),
-        MyRoutes.aboutYou : (context) => AboutYou(),
-        MyRoutes.duration : (context) => DurationPage(),
-        MyRoutes.goals : (context) => GoalsPage(),
+        MyRoutes.customWorkoutHome: (context) => CustomWorkoutHome(),
+        MyRoutes.aboutYou: (context) => AboutYou(),
+        MyRoutes.duration: (context) => DurationPage(),
+        MyRoutes.goals: (context) => GoalsPage(),
         MyRoutes.statsRoute: (context) => StatsScreen(),
         MyRoutes.settingsRoute: (context) => SettingHome(),
         MyRoutes.abouUsRoute: (context) => AboutUs(),
