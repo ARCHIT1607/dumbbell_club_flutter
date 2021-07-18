@@ -18,7 +18,7 @@ class OnboardingHeader extends StatelessWidget {
         Padding(
           padding: EdgeInsets.fromLTRB(40.0, 120.0, 40.0, 0.0),
           child: Image.asset(
-            'images/logo.png',
+            'assets/images/logo.png',
             height: 80,
           ),
         ),

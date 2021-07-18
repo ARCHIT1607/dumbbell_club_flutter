@@ -1,3 +1,7 @@
+import 'package:dumbbell_club/profile/custom_workout_home.dart';
+import 'package:dumbbell_club/profile/custom_workut/about_you.dart';
+import 'package:dumbbell_club/profile/custom_workut/duration.dart';
+import 'package:dumbbell_club/profile/custom_workut/goals.dart';
 import 'package:dumbbell_club/profile/profile_home.dart';
 import 'package:dumbbell_club/profile/stats.dart';
 import 'package:dumbbell_club/screens/dashboard.dart';
@@ -53,8 +57,19 @@ class MaterialAppWithTheme extends StatelessWidget {
     final theme = Provider.of<ThemeChanger>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: theme.getTheme(),
-      initialRoute: MyRoutes.indexRoute,
+      themeMode: ThemeMode.dark,
+      theme: ThemeData(
+        brightness: Brightness.light,
+        canvasColor: Colors.white,
+        fontFamily: GoogleFonts.poppins().fontFamily,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        canvasColor: Color(0xff202020),
+        fontFamily: GoogleFonts.poppins().fontFamily,
+        primaryColor: Colors.white,
+      ),
+      initialRoute: MyRoutes.loginRoute,
       routes: {
         '/': (context) => RegisterPage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
@@ -68,6 +83,10 @@ class MaterialAppWithTheme extends StatelessWidget {
         MyRoutes.workoutRoute: (context) => WorkoutScreen(),
         MyRoutes.nutritionPageRoute: (context) => NutritionScreen(),
         MyRoutes.profileRoute: (context) => ProfileHomeScreen(),
+        MyRoutes.customWorkoutHome : (context) => CustomWorkoutHome(),
+        MyRoutes.aboutYou : (context) => AboutYou(),
+        MyRoutes.duration : (context) => DurationPage(),
+        MyRoutes.goals : (context) => GoalsPage(),
         MyRoutes.statsRoute: (context) => StatsScreen(),
         MyRoutes.settingsRoute: (context) => SettingHome(),
         MyRoutes.abouUsRoute: (context) => AboutUs(),
