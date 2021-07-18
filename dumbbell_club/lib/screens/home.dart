@@ -42,136 +42,136 @@ class _HomePageState extends State<HomePage> {
         ),
         elevation: 2.0,
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.black,
-    shape: CircularNotchedRectangle(),
-    notchMargin: 15,
-    child: Container(
-      height: 70,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 10.0,
-              ),
-              MaterialButton(
-                onPressed: () {
-                  setState(() {
-                    currentScreen = DashboardScreen();
-                    currentTab = 0;
-                  });
-                },
-                minWidth: 40,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.home_filled,
-                      color: Colors.amber.shade400,
-                    ),
-                    Text(
-                      "Home",
-                      style: TextStyle(
-                        color: Colors.amber.shade400,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              MaterialButton(
-                onPressed: () {
-                  setState(() {
-                    currentScreen = WorkoutScreen();
-                    currentTab = 1;
-                  });
-                },
-                minWidth: 40,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.timer_rounded,
-                      color: Colors.amber.shade400,
-                    ),
-                    Text(
-                      "Workouts",
-                      style: TextStyle(
-                        color: Colors.amber.shade400,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              MaterialButton(
-                onPressed: () {
-                  setState(() {
-                    currentScreen = NutritionScreen();
-                    currentTab = 2;
-                  });
-                },
-                minWidth: 40,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.food_bank_sharp,
-                      color: Colors.amber.shade400,
-                    ),
-                    Text(
-                      "Nutrition",
-                      style: TextStyle(
-                        color: Colors.amber.shade400,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              MaterialButton(
-                onPressed: () {
-                  setState(() {
-                    currentScreen = ProfileScreen();
-                    currentTab = 3;
-                  });
-                },
-                minWidth: 40,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.account_circle,
-                      color: Colors.amber.shade400,
-                    ),
-                    Text(
-                      "Profile",
-                      style: TextStyle(
-                        color: Colors.amber.shade400,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 10.0,
-              )
-            ],
-          ),
+    //   bottomNavigationBar: BottomAppBar(
+    //     color: Colors.black,
+    // shape: CircularNotchedRectangle(),
+    // notchMargin: 15,
+    // child: Container(
+    //   height: 70,
+    //   child: Row(
+    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //     children: [
+    //       Row(
+    //         crossAxisAlignment: CrossAxisAlignment.center,
+    //         children: [
+    //           SizedBox(
+    //             width: 10.0,
+    //           ),
+    //           MaterialButton(
+    //             onPressed: () {
+    //               setState(() {
+    //                 currentScreen = DashboardScreen();
+    //                 currentTab = 0;
+    //               });
+    //             },
+    //             minWidth: 40,
+    //             child: Column(
+    //               mainAxisAlignment: MainAxisAlignment.center,
+    //               crossAxisAlignment: CrossAxisAlignment.center,
+    //               children: [
+    //                 Icon(
+    //                   Icons.home_filled,
+    //                   color: Colors.amber.shade400,
+    //                 ),
+    //                 Text(
+    //                   "Home",
+    //                   style: TextStyle(
+    //                     color: Colors.amber.shade400,
+    //                   ),
+    //                 )
+    //               ],
+    //             ),
+    //           ),
+    //           MaterialButton(
+    //             onPressed: () {
+    //               setState(() {
+    //                 currentScreen = WorkoutScreen();
+    //                 currentTab = 1;
+    //               });
+    //             },
+    //             minWidth: 40,
+    //             child: Column(
+    //               mainAxisAlignment: MainAxisAlignment.center,
+    //               crossAxisAlignment: CrossAxisAlignment.center,
+    //               children: [
+    //                 Icon(
+    //                   Icons.timer_rounded,
+    //                   color: Colors.amber.shade400,
+    //                 ),
+    //                 Text(
+    //                   "Workouts",
+    //                   style: TextStyle(
+    //                     color: Colors.amber.shade400,
+    //                   ),
+    //                 )
+    //               ],
+    //             ),
+    //           ),
+    //         ],
+    //       ),
+    //       Row(
+    //         crossAxisAlignment: CrossAxisAlignment.start,
+    //         children: [
+    //           MaterialButton(
+    //             onPressed: () {
+    //               setState(() {
+    //                 currentScreen = NutritionScreen();
+    //                 currentTab = 2;
+    //               });
+    //             },
+    //             minWidth: 40,
+    //             child: Column(
+    //               mainAxisAlignment: MainAxisAlignment.center,
+    //               crossAxisAlignment: CrossAxisAlignment.center,
+    //               children: [
+    //                 Icon(
+    //                   Icons.food_bank_sharp,
+    //                   color: Colors.amber.shade400,
+    //                 ),
+    //                 Text(
+    //                   "Nutrition",
+    //                   style: TextStyle(
+    //                     color: Colors.amber.shade400,
+    //                   ),
+    //                 )
+    //               ],
+    //             ),
+    //           ),
+    //           MaterialButton(
+    //             onPressed: () {
+    //               setState(() {
+    //                 currentScreen = ProfileScreen();
+    //                 currentTab = 3;
+    //               });
+    //             },
+    //             minWidth: 40,
+    //             child: Column(
+    //               mainAxisAlignment: MainAxisAlignment.center,
+    //               crossAxisAlignment: CrossAxisAlignment.center,
+    //               children: [
+    //                 Icon(
+    //                   Icons.account_circle,
+    //                   color: Colors.amber.shade400,
+    //                 ),
+    //                 Text(
+    //                   "Profile",
+    //                   style: TextStyle(
+    //                     color: Colors.amber.shade400,
+    //                   ),
+    //                 )
+    //               ],
+    //             ),
+    //           ),
+    //           SizedBox(
+    //             width: 10.0,
+    //           )
+    //         ],
+    //       ),
           
-        ],
-      ),
-    ),
-    ),
+    //     ],
+    //   ),
+    // ),
+    // ),
     );
   }
 }
