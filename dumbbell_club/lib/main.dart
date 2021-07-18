@@ -53,7 +53,7 @@ class MaterialAppWithTheme extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.loginRoute,
+      initialRoute: MyRoutes.indexRoute,
       routes: {
         '/': (context) => RegisterPage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
