@@ -9,7 +9,6 @@ class VerifyOtp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: SafeArea(
           child: Container(
         alignment: Alignment.center,
@@ -18,10 +17,27 @@ class VerifyOtp extends StatelessWidget {
             SizedBox(
               height: 20.0,
             ),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(
+                  Icons.arrow_left_sharp,
+                  size: 50,
+                ),
+              ),
+            ),
             OnboardingHeader(text: false, subtext: false),
             Text(
               'VERIFY OTP',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                  color: (Theme.of(context) == Brightness.dark)
+                      ? Colors.white
+                      : Colors.black),
             ),
             Text(
               'Enter the 6-digit OTP sent to ...',
@@ -61,7 +77,7 @@ class VerifyOtp extends StatelessWidget {
                   width: 310,
                   child: Text('CONFIRM',
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontWeight: FontWeight.w900,
                           fontSize: 18,
                           fontFamily: GoogleFonts.poppins().fontFamily)),
@@ -79,7 +95,10 @@ class VerifyOtp extends StatelessWidget {
               child: RichText(
                 text: TextSpan(
                   text: "Didn’t get an OTP?",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                      color: (Theme.of(context) == Brightness.dark)
+                          ? Colors.white
+                          : Colors.black),
                   children: <TextSpan>[
                     TextSpan(
                       text: 'Send Again',

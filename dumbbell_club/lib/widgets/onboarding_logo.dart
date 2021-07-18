@@ -22,25 +22,28 @@ class OnboardingHeader extends StatelessWidget {
             height: 80,
           ),
         ),
-        if(text)Text(
-          "DUMBBELL CLUB",
-          style: TextStyle(
-              color: Colors.white,
-              fontFamily: GoogleFonts.poppins().fontFamily,
-              fontSize: 30.0,
-              fontWeight: FontWeight.w900),
-        ),
+        if (text)
+          Text(
+            "DUMBBELL CLUB",
+            style: TextStyle(
+                color: (Theme.of(context) == Brightness.dark)
+                    ? Colors.white
+                    : Colors.black,
+                fontFamily: GoogleFonts.poppins().fontFamily,
+                fontSize: 30.0,
+                fontWeight: FontWeight.w900),
+          ),
         SizedBox(
           height: 5.0,
         ),
-        if(subtext)
-        Text(
-          "The Ultimate Fitness Cult",
-          style: TextStyle(
-              fontFamily: GoogleFonts.poppins().fontFamily,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey.shade400),
-        ),
+        if (subtext)
+          Text(
+            "The Ultimate Fitness Cult",
+            style: TextStyle(
+                fontFamily: GoogleFonts.poppins().fontFamily,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey.shade400),
+          ),
       ],
     );
   }

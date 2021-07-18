@@ -1,7 +1,11 @@
+import 'package:dumbbell_club/utlis/CustomTheme.dart';
 import 'package:dumbbell_club/utlis/routes.dart';
+import 'package:dumbbell_club/utlis/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class SettingHome extends StatefulWidget {
   const SettingHome({Key? key}) : super(key: key);
@@ -15,6 +19,7 @@ class _SettingHomeState extends State<SettingHome> {
 
   @override
   Widget build(BuildContext context) {
+    ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context);
     return Scaffold(
       appBar: AppBar(
         title: Container(
@@ -96,6 +101,11 @@ class _SettingHomeState extends State<SettingHome> {
                         onToggle: (value) {
                           setState(() {
                             status = value;
+                            if (status) {
+                              _themeChanger.setTheme(CustomTheme.darkTheme);
+                            } else {
+                              _themeChanger.setTheme(CustomTheme.lightTheme);
+                            }
                           });
                         },
                       ),
@@ -147,11 +157,10 @@ class SettingsTile extends StatelessWidget {
       child: ListTile(
         leading: FaIcon(
           tileIcon,
-          color: Colors.white,
         ),
         title: Text(
           tileText,
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900),
+          style: TextStyle(fontWeight: FontWeight.w900),
         ),
         trailing: toggleButton,
       ),

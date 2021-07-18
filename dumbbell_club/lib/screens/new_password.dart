@@ -62,16 +62,19 @@ class NewPassowrd extends StatelessWidget {
                       Navigator.pushNamed(context, MyRoutes.loginRoute);
                     },
                     child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(40),
+                        color: Constants.primarySwatch,
+                      ),
                       alignment: Alignment.center,
                       height: 50,
-                      width: 300,
-                      child: Text('SUBMIT',
+                      width: 250,
+                      child: Text('CONFIRM',
                           style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w900,
-                              fontSize: 18,
+                              fontSize: 16,
                               fontFamily: GoogleFonts.poppins().fontFamily)),
-                      color: Constants.primarySwatch,
                     ),
                   ),
                 ),

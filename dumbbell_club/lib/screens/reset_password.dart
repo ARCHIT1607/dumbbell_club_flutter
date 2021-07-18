@@ -86,16 +86,19 @@ class _ResetPasswordState extends State<ResetPassword> {
                       Navigator.pushNamed(context, MyRoutes.newPasswordRoute);
                     },
                     child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(40),
+                        color: Constants.primarySwatch,
+                      ),
                       alignment: Alignment.center,
                       height: 50,
-                      width: 300,
-                      child: Text('SEND OTP',
+                      width: 250,
+                      child: Text('RESET',
                           style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w900,
-                              fontSize: 18,
+                              fontSize: 16,
                               fontFamily: GoogleFonts.poppins().fontFamily)),
-                      color: Constants.primarySwatch,
                     ),
                   ),
                 ),

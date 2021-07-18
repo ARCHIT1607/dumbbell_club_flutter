@@ -1,6 +1,5 @@
-import 'package:dumbbell_club/constant.dart';
-import 'package:dumbbell_club/screens/login_page.dart';
 import 'package:dumbbell_club/utlis/routes.dart';
+
 import 'package:dumbbell_club/widgets/onboarding_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
@@ -17,12 +16,11 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: 20.0),
@@ -112,13 +110,30 @@ class _RegisterPageState extends State<RegisterPage> {
                             });
                           },
                         ),
-                        Text('I  accept the Terms & Conditions'),
+                        RichText(
+                          text: TextSpan(
+                              text: "I accept the ",
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontFamily: GoogleFonts.poppins().fontFamily,
+                              ),
+                              children: <TextSpan>[
+                                TextSpan(
+                                    text: "terms & conditions",
+                                    style: TextStyle(
+                                      color: Color(0xFFFF7500),
+                                    ))
+                              ]),
+                        ),
                       ],
                     ),
                     SizedBox(
                       height: 20.0,
                     ),
                     Material(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(40.0)),
+                      elevation: 1.0,
                       color: Color(0xffF1D333),
                       child: GestureDetector(
                         onTap: () {
@@ -142,14 +157,14 @@ class _RegisterPageState extends State<RegisterPage> {
                           child: Text(
                             "REGISTER",
                             style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0,
+                              color: Colors.white,
+                              fontSize: 18,
                               fontWeight: FontWeight.w900,
                               fontFamily: GoogleFonts.poppins().fontFamily,
                             ),
                           ),
                           alignment: Alignment.center,
-                          height: 50.0,
+                          height: 60.0,
                         ),
                       ),
                     ),
@@ -164,7 +179,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         text: TextSpan(
                           text: "Already have an account?",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: (Theme.of(context) == Brightness.dark) ? Colors.white : Colors.black,
                             fontFamily: GoogleFonts.poppins().fontFamily,
                           ),
                           children: <TextSpan>[
@@ -182,7 +197,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
