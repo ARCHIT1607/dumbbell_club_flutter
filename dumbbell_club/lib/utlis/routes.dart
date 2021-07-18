@@ -19,4 +19,7 @@ class MyRoutes {
   static String myAccountRoute = '/my-account';
   static String feedbackRoute = '/feedback';
   static String contactRoute = '/contact-us';
+
+  // Index
+  static String indexRoute = '/index';
 }
