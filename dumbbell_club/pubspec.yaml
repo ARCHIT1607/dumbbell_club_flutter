@@ -44,7 +44,6 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   modal_bottom_sheet: ^2.0.0
   expandable: ^5.0.1
-
   flutter_switch: ^0.3.2
   provider: ^5.0.0
 

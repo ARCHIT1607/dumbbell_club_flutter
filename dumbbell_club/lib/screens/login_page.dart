@@ -119,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                                           content: Text(
                                               'You have entered valid email ${emailController.text} and password')));
                                   Navigator.pushNamed(
-                                      context, MyRoutes.homeRoute);
+                                      context, MyRoutes.indexRoute);
                                 }
                               },
                               child: Container(

@@ -1,5 +1,4 @@
-import 'package:dumbbell_club/profile/profile_home.dart';
-import 'package:dumbbell_club/screens/home.dart';
+import 'package:dumbbell_club/screens/dashboard.dart';
 import 'package:dumbbell_club/screens/workout_screen.dart';
 import 'package:dumbbell_club/settings/buy_me_coffee.dart';
 import 'package:dumbbell_club/settings/settings_main.dart';
@@ -28,10 +27,10 @@ class MyNavigationBar extends StatefulWidget {
 class _MyNavigationBarState extends State<MyNavigationBar> {
   int _selectedIndex = 0;
   static List<Widget> _widgetOptions = <Widget>[
-    SettingHome(),
+    DashboardScreen(),
     WorkoutScreen(),
     NutritionScreen(),
-    Coffee(),
+    SettingHome()
   ];
 
   void _onItemTapped(int index) {
@@ -46,8 +45,10 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
       appBar: AppBar(
           title: const Text('Flutter BottomNavigationBar Example'),
           backgroundColor: Colors.green),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      body: SingleChildScrollView(
+              child: Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[

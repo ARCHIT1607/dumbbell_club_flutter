@@ -5,7 +5,6 @@ import 'package:dumbbell_club/profile/custom_workut/goals.dart';
 import 'package:dumbbell_club/profile/profile_home.dart';
 import 'package:dumbbell_club/profile/stats.dart';
 import 'package:dumbbell_club/screens/dashboard.dart';
-import 'package:dumbbell_club/screens/home.dart';
 import 'package:dumbbell_club/screens/index.dart';
 import 'package:dumbbell_club/screens/login_page.dart';
 import 'package:dumbbell_club/screens/new_password.dart';
@@ -77,7 +76,6 @@ class MaterialAppWithTheme extends StatelessWidget {
         MyRoutes.registerRoute: (context) => RegisterPage(),
         MyRoutes.verifyOtpRoute: (context) => VerifyOtp(),
         MyRoutes.newPasswordRoute: (context) => NewPassowrd(),
-        MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.splashScreenRoute: (context) => SplashScreen(),
         MyRoutes.dashboardRoute: (context) => DashboardScreen(),
         MyRoutes.workoutRoute: (context) => WorkoutScreen(),

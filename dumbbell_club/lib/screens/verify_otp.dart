@@ -69,7 +69,7 @@ class VerifyOtp extends StatelessWidget {
               padding: const EdgeInsets.all(5.0),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, MyRoutes.homeRoute);
+                  Navigator.pushNamed(context, MyRoutes.indexRoute);
                 },
                 child: Container(
                   alignment: Alignment.center,

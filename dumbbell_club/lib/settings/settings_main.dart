@@ -124,7 +124,7 @@ class _SettingHomeState extends State<SettingHome> {
                 SettingsTile(
                   tileIcon: Icons.logout,
                   tileText: 'Logout',
-                  routeName: MyRoutes.homeRoute,
+                  routeName: MyRoutes.indexRoute
                 ),
               ],
             ),
