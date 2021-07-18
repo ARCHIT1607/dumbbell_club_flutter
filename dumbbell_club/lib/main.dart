@@ -2,6 +2,7 @@ import 'package:dumbbell_club/profile/profile_home.dart';
 import 'package:dumbbell_club/profile/stats.dart';
 import 'package:dumbbell_club/screens/dashboard.dart';
 import 'package:dumbbell_club/screens/home.dart';
+import 'package:dumbbell_club/screens/index.dart';
 import 'package:dumbbell_club/screens/login_page.dart';
 import 'package:dumbbell_club/screens/new_password.dart';
 import 'package:dumbbell_club/screens/nutrition_screen.dart';
@@ -53,7 +54,7 @@ class MaterialAppWithTheme extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: theme.getTheme(),
-      initialRoute: MyRoutes.verifyOtpRoute,
+      initialRoute: MyRoutes.indexRoute,
       routes: {
         '/': (context) => RegisterPage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
@@ -74,6 +75,7 @@ class MaterialAppWithTheme extends StatelessWidget {
         MyRoutes.myAccountRoute: (context) => MyAccount(),
         MyRoutes.feedbackRoute: (context) => FeedBack(),
         MyRoutes.contactRoute: (context) => ContactUs(),
+        MyRoutes.indexRoute: (context) => Index(),
       },
     );
   }

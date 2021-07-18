@@ -28,12 +28,6 @@ class MyNavigationBar extends StatefulWidget {
 class _MyNavigationBarState extends State<MyNavigationBar> {
   int _selectedIndex = 0;
   static List<Widget> _widgetOptions = <Widget>[
-    // Text('Home Page',
-    //     style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    // Text('Search Page',
-    //     style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    // Text('Profile Page',
-    //     style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
     SettingHome(),
     WorkoutScreen(),
     NutritionScreen(),
@@ -63,7 +57,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                 Icons.home,
                 color: Color(0xFFDE8A00),
               ),
-              label: '',
+              label: 'Home',
               backgroundColor: Color(0xFF131313),
             ),
             BottomNavigationBarItem(
@@ -74,7 +68,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                 FontAwesomeIcons.dumbbell,
                 color: Color(0xFFDE8A00),
               ),
-              label: '',
+              label: 'Workout',
               backgroundColor: Color(0xFF131313),
             ),
             BottomNavigationBarItem(
@@ -85,7 +79,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                 FontAwesomeIcons.utensils,
                 color: Color(0xFFDE8A00),
               ),
-              label: '',
+              label: 'Nutrition',
               backgroundColor: Color(0xFF131313),
             ),
             BottomNavigationBarItem(
@@ -96,14 +90,14 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                 FontAwesomeIcons.userCircle,
                 color: Color(0xFFDE8A00),
               ),
-              label: '',
+              label: 'Settings',
               backgroundColor: Color(0xFF131313),
             ),
           ],
           type: BottomNavigationBarType.shifting,
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.black,
-          iconSize: 40,
+          iconSize: 30,
           onTap: _onItemTapped,
           elevation: 5),
     );
